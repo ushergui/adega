@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+    {% block content %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h2 class="text-center my-4">Faça seu login</h2>
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-primary">Entrar</button>
+                    <a href="{% url 'user_create' %}" class="btn btn-link">Cadastrar-se</a>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
